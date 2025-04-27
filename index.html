@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko GoRoti</title>
+    <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="css/style.css">]
+</head>
+<body>
+
+<header>    
+    <h1 class="typing">Selamat Datang di Toko GoRoti!!</h1>
+</header>
+<nav >
+    <a class="underline-hover" href="index.html">Home</a> |
+    <a class="underline-hover" href="cart.html">Keranjang</a> |
+    <a class="underline-hover" href="chekout.html">Chekout</a>
+</nav>
+
+<main>
+    <section id="product-list">
+        <!-- Contoh Produk -->
+        <div class="product">
+            <img src="images/coklat.jpeg" alt="Roti Goreng Coklat">
+            <h3>Roti Goreng Coklat</h3>
+            <p>Rp 8.000</p>
+            <button onclick="addToCart('Roti Goreng Coklat', 8000)">Tambah ke Keranjang</button>
+        </div>
+
+        <div class="product">
+            <img src="images/telor.jpeg" alt="Roti Goreng Telur">
+            <h3>Roti Goreng Telur</h3>
+            <p>Rp 8.000</p>
+            <button onclick="addToCart('Roti Goreng Telur', 8000)">Tambah ke Keranjang</button>
+        </div>
+
+        <!-- <div class="product">
+            <img src="images/radit.jpeg" alt="Iler Goreng">
+            <h3>Iler Goreng</h3>
+            <p>Rp 2.000.000</p>
+            <button onclick="addToCart('Iler Goreng', 2000000)">Tambah ke Keranjang</button>
+        </div> -->
+
+        <div class="product">
+            <img src="images/campur.jpeg" alt="Roti Goreng Campur Coklat+Telur">
+            <h3>Roti Goreng Campur Coklat+Telur</h3>
+            <p>Rp 8.000</p>
+            <button onclick="addToCart('Roti Goreng Campur Coklat+Telur', 8000)">Tambah ke Keranjang</button>
+        </div>
+
+        <!-- <div class="product">
+            <img src="images/nasigoreng.jpg" alt="Nasi Goreng">
+            <h3>Nasi Goreng</h3>
+            <p>Rp 20.000</p>
+            <button onclick="addToCart('Nasi Goreng', 20000)">Tambah ke Keranjang</button>
+        </div>
+
+        <div class="product">
+            <img src="images/es_teh.jpg" alt="Es Teh Manis">
+            <h3>Es Teh Manis</h3>
+            <p>Rp 5.000</p>
+            <button onclick="addToCart('Es Teh Manis', 5000)">Tambah ke Keranjang</button>
+        </div> -->
+        <!-- Tambahkan produk lain di sini -->
+    </section>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

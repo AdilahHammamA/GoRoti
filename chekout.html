@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="">Chekout</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="cart.html">Keranjang</a> |
+        <a href="chekout.html">Chekout</a>
+    </nav>
+
+<main>
+    <section class="tulisan" id="order-summary">
+        <!-- Pesanan dari keranjang akan ditampilkan di sini -->
+      </section>
+    <form id="checkout-form" onsubmit="submitOrder(event)">
+        <label>Nama Lengkap:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label>Alamat:</label><br>
+        <textarea id="address" required></textarea><br><br>
+
+        <label>Nomor HP:</label><br>
+        <input type="tel" id="phone" required><br><br>
+
+        <button type="submit">Pesan Sekarang</button>
+    </form>
+</main>
+
+<script>
+    function showOrderSummary() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let orderSummary = document.getElementById('order-summary');
+        let total = 0;
+        orderSummary.innerHTML = '<h2>Pesanan Kamu:</h2><ul>';
+    
+        cart.forEach(item => {
+            let itemTotal = item.price * item.qty;
+            orderSummary.innerHTML += `<li>${item.qty} x ${item.name} - Rp ${itemTotal}</li>`;
+            total += itemTotal;
+        });
+    
+        orderSummary.innerHTML += '</ul>';
+        orderSummary.innerHTML += `<h3>Total Belanja: Rp ${total}</h3>`;
+    }
+    
+    // Jalankan saat halaman dibuka
+    if (document.getElementById('order-summary')) {
+        showOrderSummary();
+    }
+    </script>
+
+<script src="js/script.js"></script>
+<SCript>
+    showOrderSummary();
+</SCript>
+</body>
+</html>

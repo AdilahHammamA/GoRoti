@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ringkasan Pembayaran</title>
+  <link rel="icon" href="images/logo.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Ringkasan Pesanan Kamu</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="cart.html">Keranjang</a> |
+    <a href="checkout.html">Checkout</a>
+  </nav>
+</header>
+
+<main>
+  <section id="snap-summary">
+    <!-- List order dari keranjang akan ditampilkan di sini -->
+  </section>
+
+  <button id="pay-button" onclick="payNow()">Bayar Sekarang</button>
+</main>
+
+<script src="js/script.js"></script>
+<script>
+  showSnapSummary(); // Panggil saat halaman dibuka
+
+  function showSnapSummary() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let snapSummary = document.getElementById('snap-summary');
+    let total = 0;
+    snapSummary.innerHTML = '<h2>Detail Pesanan:</h2><ul>';
+
+    cart.forEach(item => {
+      let itemTotal = item.price * item.qty;
+      snapSummary.innerHTML += `<li>${item.qty} x ${item.name} - Rp ${itemTotal}</li>`;
+      total += itemTotal;
+    });
+
+    snapSummary.innerHTML += '</ul>';
+    snapSummary.innerHTML += `<h3>Total Belanja: Rp ${total}</h3>`;
+  }
+
+  function payNow() {
+    alert('Pembayaran berhasil! Terima kasih telah berbelanja.');
+    localStorage.removeItem('cart');
+    window.location.href = 'index.html';
+  }
+</script>
+
+</body>
+</html>
