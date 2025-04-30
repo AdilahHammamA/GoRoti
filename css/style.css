@@ -58,7 +58,7 @@ body {
 
 @keyframes typing {
     form {width: 0ch}
-    to {width: 15ch}
+    to {width: 16.5ch}
 }
 
 @keyframes blink{
